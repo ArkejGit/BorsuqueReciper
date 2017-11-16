@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { NativeModules, StatusBar, View, StyleSheet } from 'react-native';
 import { StackNavigator } from 'react-navigation';
-import Home from './Home';
-import RecipeSite from './RecipeSite';
+import Home from './sites/Home';
+import RecipeSite from './sites/RecipeSite';
 import { COLOR, ThemeProvider } from 'react-native-material-ui';
 
 const Router = StackNavigator({

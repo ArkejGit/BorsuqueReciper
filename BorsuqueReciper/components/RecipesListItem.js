@@ -21,25 +21,27 @@ export default class RecipesListItem extends React.Component {
     })
 
     return (
-      <Card style={styles.container}>
-        <View style={styles.header}>        
-          <Image
-            style={styles.image}
-            source={{uri: this.props.recipe.thumbnail}}
-          />
-          <TouchableOpacity
-            onPress={ () => {
-              Keyboard.dismiss;
-              this.props.navigate('RecipeSite', {site:  this.props.recipe.href});
-            }}
-          >
-            <Text style={styles.title}>
-              {this.props.recipe.title}
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          {ingredientsList}
+      <Card>
+        <View style={styles.cardContainer}>
+          <View style={styles.header}>        
+            <Image
+              style={styles.image}
+              source={{uri: this.props.recipe.thumbnail}}
+            />
+            <TouchableOpacity
+              onPress={ () => {
+                Keyboard.dismiss();
+                this.props.navigate('RecipeSite', {site:  this.props.recipe.href});
+              }}
+            >
+              <Text style={styles.title}>
+                {this.props.recipe.title}
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View>
+            {ingredientsList}
+          </View>
         </View>
       </Card>
     );
@@ -47,16 +49,12 @@ export default class RecipesListItem extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 15
-  },
   header: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   title: {
-    flex: 1,
-    fontSize: 20,
+    fontSize: 16,
     flexWrap: 'wrap'
   },
   row: {
@@ -67,8 +65,9 @@ const styles = StyleSheet.create({
   image: {
     width: 48, 
     height: 48,
-    borderRadius: 24,
-    margin: 5
-
+    borderRadius: 24
   },
+  cardContainer: {
+    padding: 5
+  }
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
 import { Toolbar, Icon, COLOR } from 'react-native-material-ui';
-import RecipesList from './RecipesList';
+import RecipesList from '../components/RecipesList';
 
 class Home extends React.Component {
 
@@ -43,9 +43,9 @@ class Home extends React.Component {
     return (
       <View>
       	<ScrollView
-                    keyboardShouldPersistTaps='always'
-                    keyboardDismissMode="interactive"
-                    onScroll={this.onScroll}
+            keyboardShouldPersistTaps='always'
+            keyboardDismissMode="interactive"
+            onScroll={this.onScroll}
         >
 			<Toolbar
 		        key="toolbar"
@@ -56,6 +56,7 @@ class Home extends React.Component {
 		            onChangeText: value => value ? this.getRecipes(value) : this.setState({ recipes: [] })
 		        }}
 		    />
+		    
 			<RecipesList 
 				recipes= {this.state.recipes}
 				navigate = {navigate}
